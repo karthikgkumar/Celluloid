@@ -1,0 +1,61 @@
+# tasks.yaml
+outline_act_one:
+  description: >
+    Create a detailed outline for Act I based on the provided {abstract},
+    identifying key story beats and character introductions
+  expected_output: >
+    A structured outline detailing the major scenes and story progression for Act I
+  agent: screenplay_writer
+
+develop_scenes:
+  description: >
+    Transform the outline into fully developed scenes with detailed action
+    descriptions and setting details
+  expected_output: >
+    Complete scene descriptions with proper screenplay formatting and vivid details
+  agent: scene_developer
+
+write_dialogue:
+  description: >
+    Create dialogue for all character interactions, ensuring each character has
+    a distinct voice and their conversations advance the plot
+  expected_output: >
+    Natural, character-appropriate dialogue integrated into each scene
+  agent: dialogue_writer
+
+format_scene_headers:
+  description: >
+    Format all scene headers following standard convention:
+    INT./EXT. LOCATION - TIME
+  expected_output: >
+    Properly formatted scene headers for each scene
+  agent: screenplay_formatter
+
+format_action_lines:
+  description: >
+    Format action descriptions in present tense with proper spacing and layout
+  expected_output: >
+    Properly formatted action lines with correct spacing and paragraph breaks
+  agent: screenplay_formatter
+
+format_dialogue:
+  description: >
+    Format character names and dialogue blocks according to screenplay standards
+  expected_output: >
+    Correctly formatted dialogue sections with character names, parentheticals,
+    and dialogue text
+  agent: screenplay_formatter
+
+write_act_one:
+  description: >
+    Generate complete Act I content following proper screenplay format
+  expected_output: >
+    Complete Act I with all elements properly formatted
+  agent: screenplay_writer
+
+save_script:
+  description: >
+    Save the formatted screenplay to a file
+  expected_output: >
+    Script saved as .txt file
+  agent: file_manager
