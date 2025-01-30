@@ -32,7 +32,10 @@ This concept sets the stage for a compelling political action thriller with plen
         result = (
             PoemCrew()
             .crew()
-            .kickoff(inputs={"sentence_count": self.state.sentence_count})
+            .kickoff(inputs={
+                "sentence_count": self.state.sentence_count,
+                "abstract": self.inputs["abstract"]
+            })
         )
 
         print("Poem generated", result.raw)
