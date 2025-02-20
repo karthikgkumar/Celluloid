@@ -1,7 +1,10 @@
-import openai
-import os
+from langchain_community.chat_models import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.messages import SystemMessage, HumanMessage
 from typing import Dict, Optional
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 class LoglineTool:
     def __init__(self):
         self.system_prompt = """
@@ -9,6 +12,13 @@ class LoglineTool:
         Your task is to analyze movie abstracts and generate engaging, concise loglines that capture the 
         essence of the story in a single sentence. Focus on the protagonist, conflict, stakes, and hook.
         """
+        # Initialize the LangChain chat model
+        self.llm = ChatOpenAI(
+            model_name=os.getenv('OPENAI_MODEL'),
+            temperature=0.7,
+            api_key=os.getenv('OPENAI_API_KEY'),
+            # base_url=os.getenv('OPENAI_BASE_URL')
+        )
 
     def _run(self, abstract: str, genre: Optional[str] = None) -> Dict:
         try:
@@ -26,69 +36,51 @@ class LoglineTool:
             return f"Error: {e}"
 
     def _generate_story_elements(self, abstract: str, genre: Optional[str]) -> Dict:
-        prompt = f"""
-        Analyze this movie abstract and generate the key story elements:
-        Abstract: {abstract}
-        Genre: {genre if genre else 'Not specified'}
+        prompt = ChatPromptTemplate.from_messages([
+            SystemMessage(content=self.system_prompt),
+            HumanMessage(content=f"""
+                Analyze this movie abstract and generate the key story elements:
+                Abstract: {abstract}
+                Genre: {genre if genre else 'Not specified'}
 
-        Provide the following elements in a Python dictionary format:
-        1. main_character: Detailed description of the protagonist
-        2. primary_mission: The main goal/mission of the protagonist
-        3. up_against: Main obstacles and antagonists
-        4. at_stake: What the character stands to lose
+                Provide the following elements in a Python dictionary format:
+                1. main_character: Detailed description of the protagonist
+                2. primary_mission: The main goal/mission of the protagonist
+                3. up_against: Main obstacles and antagonists
+                4. at_stake: What the character stands to lose
 
-        Format as a Python dictionary with these exact keys.
-        """
+                Format as a Python dictionary with these exact keys.
+            """)
+        ])
 
-        response = self._get_openai_response(prompt)
-        return self._parse_response(response)
+        response = self.llm.invoke(prompt.format_messages())
+        return self._parse_response(response.content)
 
     def _generate_logline(self, story_elements: Dict) -> str:
-        prompt = f"""
-        Using these story elements, create a compelling one-sentence logline:
-        
-        Main Character: {story_elements['main_character']}
-        Primary Mission: {story_elements['primary_mission']}
-        Up Against: {story_elements['up_against']}
-        At Stake: {story_elements['at_stake']}
+        prompt = ChatPromptTemplate.from_messages([
+            SystemMessage(content=self.system_prompt),
+            HumanMessage(content=f"""
+                Using these story elements, create a compelling one-sentence logline:
+                
+                Main Character: {story_elements['main_character']}
+                Primary Mission: {story_elements['primary_mission']}
+                Up Against: {story_elements['up_against']}
+                At Stake: {story_elements['at_stake']}
 
-        The logline should:
-        - Be exactly one sentence
-        - Include the protagonist's key characteristic
-        - State the main conflict
-        - Hint at the stakes
-        - Create an emotional hook
-        - Be under 50 words
+                The logline should:
+                - Be exactly one sentence
+                - Include the protagonist's key characteristic
+                - State the main conflict
+                - Hint at the stakes
+                - Create an emotional hook
+                - Be under 50 words
 
-        Return only the logline with no additional text.
-        """
+                Return only the logline with no additional text.
+            """)
+        ])
 
-        response = self._get_openai_response(prompt)
-        return response.strip()
-
-    def _get_openai_response(self, prompt: str) -> str:
-        try:
-            openaiclient = openai.Client(
-                api_key=os.getenv('OPENAI_API_KEY'),
-                base_url=os.getenv('OPENAI_BASE_URL')
-            )
-
-            msg = [
-                {"role": "system", "content": self.system_prompt},
-                {"role": "user", "content": prompt},
-            ]
-
-            response = openaiclient.chat.completions.create(
-                messages=msg,
-                temperature=0.7,
-                model=os.getenv('OPENAI_MODEL'),
-                max_tokens=500,
-                stream=False,
-            )
-            
-            return response.choices[0].message.content
-        except Exception as e:
-            return f"Error generating content: {e}"
+        response = self.llm.invoke(prompt.format_messages())
+        return response.content.strip()
 
     def _parse_response(self, response: str) -> Dict:
         try:
