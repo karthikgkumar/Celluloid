@@ -101,3 +101,10 @@ class LoglineTool:
                 "up_against": "Error parsing obstacles",
                 "at_stake": "Error parsing stakes"
             }
+        
+#######Input#####
+# {
+#   "abstract": "In a world where dreams can be infiltrated, Dom Cobb, a skilled thief, specializes in extracting secrets from deep within the subconscious.\n\nHaunted by his past and offered a chance at redemption, Cobb takes on an impossible mission: planting an idea in someone's mind instead of stealing one.\n\nAs he assembles a team of specialists to navigate the layers of dreams within dreams, reality begins to blur, and the line between the dream world and the real world starts to unravel.\n\nWith time running out and danger lurking at every level, Cobb must confront his own demons to complete the mission—or risk being trapped in a dream forever."
+# ,
+#   "genre": "string"
+# }
