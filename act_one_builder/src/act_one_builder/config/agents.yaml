@@ -1,0 +1,114 @@
+act_one_plot_architect:
+  role: "Act One Plot Structure Specialist"
+  goal: >
+    Transform {outline} into a detailed first act plot structure while considering {abstract},
+    {logline}, and {central_message}
+  backstory: >
+    Expert plot architect specializing in first act development with a proven track record
+    of establishing compelling story foundations
+
+act_one_scene_architect:
+  role: "Opening Act Scene Designer"
+  goal: >
+    Create a scene-by-scene breakdown based on {outline}, {plot_structure}, and {world_parameters}
+  backstory: >
+    Experienced scene designer who excels at translating plot points into vivid,
+    cinematic sequences that establish story worlds
+
+act_one_dialogue_specialist:
+  role: "First Act Dialogue Creator"
+  goal: >
+    Develop character dialogue based on {outline}, {character_profiles}, and {scene_breakdown}
+  backstory: >
+    Dialogue expert who crafts authentic character voices while advancing plot and
+    revealing key story elements
+
+act_one_character_architect:
+  role: "Character Introduction Specialist"
+  goal: >
+    Design character entrances and arcs based on {outline}, {character_profiles}, and {plot_structure}
+  backstory: >
+    Character development expert who specializes in crafting memorable character
+    introductions and establishing relationship dynamics
+
+act_one_world_builder:
+  role: "Story World Establishment Specialist"
+  goal: >
+    Build the story world based on {outline}, {setting_parameters}, and {genre_requirements}
+  backstory: >
+    World-building specialist who creates rich, believable story environments that
+    support narrative needs
+
+act_one_integration_manager:
+  role: "First Act Assembly Specialist"
+  goal: >
+    Integrate all elements based on {outline}, {scene_components}, and {quality_requirements}
+  backstory: >
+    Integration expert who ensures cohesive assembly of all first act elements while
+    maintaining consistency and pacing
+
+# Script Formatting Guidelines (integrated for all agents):
+script_formatting_guidelines:
+  scene_headings:
+    format: "INT/EXT. LOCATION TIME OF DAY"
+    example: "INT. COFFEE SHOP DAY"
+    notes: "Always in all caps, indicating whether the scene is interior (INT) or exterior (EXT), followed by the location and time of day."
+  action_lines:
+    format: "Written in present tense, concise, focusing on visual elements."
+    example: "John enters the room, scanning for signs of movement."
+    notes: "Avoid internal thoughts or overly descriptive language."
+  character_names:
+    format: "In action lines and dialogue headers, character names are always capitalized."
+    example: "GEORGIA steps out of the car."
+  dialogue:
+    format: "Centered on the page with the character name above it in all caps."
+    example: |
+      JOHN
+      I'm going to get some coffee.
+
+      MARY
+      Sounds good to me.
+  parentheticals:
+    format: "Used sparingly to provide context for dialogue delivery."
+    example: |
+      JOHN
+      (sighing)
+      I don't know if I can do this anymore.
+  transitions:
+    format: "Written in all caps at the right margin."
+    example: "FADE OUT.\nFADE IN:\nCUT TO:\nDISSOLVE TO:"
+    notes: "These transitions help guide scene changes."
+  off_screen_speech:
+    format: "Indicate off-screen characters with 'O.S.' next to their name."
+    example: "JOHN O.S.\nHello?"
+    notes: "For voiceovers, use 'V.O.' instead."
+  margins_and_font:
+    format: "Use Courier New font at size 12 points with specified margins."
+    specifications:
+      - "1½-inch left margin"
+      - "1-inch right margin"
+      - "1-inch top/bottom margins"
+    notes: "Page numbers start from page two; each page typically represents one minute of screen time. The title page includes only the title and writer's information without additional content."
+
+# Initial Outline Task (also part of agents.yaml):
+outline_creation_task:
+  description: >
+    Create an initial Act One outline based on {abstract}, {logline}, {central_message},
+    {main_character_profile}, and {supporting_characters_profile}
+  expected_output: >
+    Detailed Act One outline including:
+      opening_scene:
+        - World establishment
+        - Character introductions
+        - Tone setting
+      
+      opportunity:
+        - Inciting incident
+        - Character impact
+        - Story launch
+      
+      new_situation:
+        - Character adaptation
+        - Stakes establishment
+        - Goal definition
+  agent: act_one_plot_architect

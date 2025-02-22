@@ -1,0 +1,116 @@
+# Initial Outline Task (also part of agents.yaml):
+outline_creation_task:
+  description: >
+    Create an initial Act One outline based on {abstract}, {logline}, {central_message},
+    {main_character_profile}, and {supporting_characters_profile}
+  expected_output: >
+    Detailed Act One outline including:
+      opening_scene:
+        - World establishment
+        - Character introductions
+        - Tone setting
+      
+      opportunity:
+        - Inciting incident
+        - Character impact
+        - Story launch
+      
+      new_situation:
+        - Character adaptation
+        - Stakes establishment
+        - Goal definition
+  agent: act_one_plot_architect
+
+plot_structure_task:
+  description: >
+    Develop detailed plot structure from {outline} incorporating:
+    - Opening scene framework
+    - Inciting incident
+    - Story launch sequence
+    - Initial conflicts
+  expected_output: >
+    Detailed plot structure with scene progression and dramatic beats
+  agent: act_one_plot_architect
+
+scene_development_task:
+  description: >
+    Create scene breakdowns based on {outline}, {plot_structure}, and {world_parameters}
+    including:
+    - Scene objectives
+    - Location details
+    - Action sequences
+    - Dramatic moments
+  expected_output: >
+    Complete scene-by-scene breakdown with setting and action descriptions
+  agent: act_one_scene_architect
+
+dialogue_development_task:
+  description: >
+    Create character dialogue based on {outline}, {character_profiles}, and
+    {scene_breakdown} considering:
+    - Character voices
+    - Key conversations
+    - Relationship dynamics
+    - Story revelations
+  expected_output: >
+    Scene-specific dialogue with character interactions and subtext
+  agent: act_one_dialogue_specialist
+
+character_introduction_task:
+  description: >
+    Design character entrances and developments based on {outline}, {character_profiles},
+    and {plot_structure} including:
+    - First appearances
+    - Character moments
+    - Relationship establishments
+    - Arc setups
+  expected_output: >
+    Character introduction sequences and development points
+  agent: act_one_character_architect
+
+world_building_task:
+  description: >
+    Establish story world based on {outline}, {setting_parameters}, and
+    {genre_requirements} including:
+    - Location descriptions
+    - Environmental details
+    - World rules
+    - Atmosphere creation
+  expected_output: >
+    Detailed world-building elements and setting descriptions
+  agent: act_one_world_builder
+
+integration_task:
+  description: >
+    Combine all elements based on {outline}, {scene_components}, {character_elements},
+    and {world_details} ensuring:
+    - Narrative flow
+    - Pacing balance
+    - Element consistency
+    - Quality standards
+  expected_output: >
+    Complete integrated Act One with all elements assembled
+  agent: act_one_integration_manager
+
+quality_review_task:
+  description: >
+    Review final Act One against {story_requirements}, {genre_conventions}, and
+    {quality_standards} checking:
+    - Structure integrity
+    - Character consistency
+    - World cohesion
+    - Dramatic effectiveness
+  expected_output: >
+    Quality assessment report with any needed revision recommendations
+  agent: act_one_integration_manager
+
+final_assembly_task:
+  description: >
+    Prepare final Act One document incorporating {quality_review_feedback} and ensuring:
+    - Format consistency
+    - Element completion
+    - Transition smoothness
+    - Setup effectiveness
+  expected_output: >
+    Production-ready Act One script
+  agent: act_one_integration_manager
