@@ -2,29 +2,117 @@
 outline_creation_task:
   description: >
     Create a comprehensive three-act outline for a screenplay based on the provided {abstract}, {logline}, {central_message}, 
-    and {character_profile}, considering the {genre} if specified. Break down the narrative into essential components while 
-    ensuring perfect dramatic pacing across all three acts. The outline should demonstrate mastery of screenplay structure
-    and craft a compelling story that effectively delivers on the core concept.
+    {main_character_profile}, {supporting_characters_profile}, and considering the {genre} if specified. The outline must follow classical dramatic structure:
+
+    ACT I (SETUP):
+    - Opening Scene: Establish the world and characters
+    - The Opportunity: Create inciting incident that launches the story
+    - The New Situation: Show characters adapting to the call to action
+
+    ACT II (CONFRONTATION):
+    - Change of Plans: Present first major complication that disrupts initial goals
+    - The Progress: Develop escalating challenges and character growth
+    - Point of No Return: Force critical character commitment
+    - Upping the Stakes: Intensify conflicts and obstacles
+    - The Lowest Point: Drive characters to their deepest crisis
+
+    ACT III (RESOLUTION):
+    - Final Conflict: Build to ultimate confrontation
+    - Conclusion: Resolve story threads and character arcs
+
   expected_output: >
-    A comprehensive outline dictionary containing:
-    - Detailed breakdown of all three acts
-    - Key plot points and turning points
-    - Character arc progression aligned with character profiles
-    - Major story beats with optimal dramatic pacing
-    - Integration of themes from abstract and central message
+    A structured outline dictionary containing:
+
+    act_one:
+      opening_scene: Initial world setup
+      opportunity: {
+        description: Key incident details,
+        character_impact: How it affects protagonist,
+        story_launch: How it sets the main plot in motion
+      }
+      new_situation: {
+        adaptation: Character response to opportunity,
+        stakes: Initial conflict establishment,
+        goal_definition: Clear story objective
+      }
+
+    act_two:
+      change_of_plans: {
+        complication: First major obstacle,
+        goal_revision: How plans must change,
+        character_challenge: Impact on protagonist
+      }
+      progress: {
+        escalation: Series of progressive challenges,
+        character_growth: Development steps,
+        subplot_integration: Supporting story elements
+      }
+      point_of_no_return: {
+        critical_choice: Key decision moment,
+        commitment: Character's full investment,
+        stakes_elevation: Raised consequences
+      }
+      raising_stakes: {
+        conflicts: Intensifying challenges,
+        obstacles: Growing difficulties,
+        character_pressure: Mounting tension
+      }
+      lowest_point: {
+        crisis: Maximum challenge moment,
+        character_break: Emotional/psychological impact,
+        setup_resolution: Seeds for final act
+      }
+
+    act_three:
+      final_conflict: {
+        climax: Ultimate confrontation details,
+        character_test: Final challenge,
+        theme_culmination: Message payoff
+      }
+      conclusion: {
+        resolution: Story wrap-up,
+        character_arc: Final state of protagonist,
+        theme_resolution: Central message delivery
+      }
+
   agent: outline_architect
 
 outline_review_task:
   description: >
-    Analyze the generated outline to validate structural integrity and alignment with the original {abstract}, {logline}, 
-    {central_message} and {character_profile}. Review for narrative cohesion, dramatic impact, and proper character arc 
-    development. Identify any structural weaknesses and provide specific recommendations to strengthen the story arcs
-    while maintaining fidelity to the core concept.
+    Analyze the generated outline for:
+    - Structural integrity of three-act format
+    - Alignment with provided {abstract}, {logline}, and {central_message}
+    - Character arc development following {main_character_profile} and {supporting_characters_profile}
+    - Proper escalation of conflict and stakes
+    - Thematic consistency and message delivery
+    - Dramatic payoff effectiveness
+
   expected_output: >
-    A detailed analysis of the outline including:
-    - Evaluation of three-act structure effectiveness
-    - Assessment of plot point placement and pacing
-    - Analysis of character arc progression and development
-    - Specific recommendations for structural improvements
-    - Validation of theme integration and concept alignment
+    A comprehensive analysis including:
+    
+    structure_assessment: {
+      act_one_evaluation: Analysis of setup effectiveness,
+      act_two_evaluation: Assessment of conflict progression,
+      act_three_evaluation: Review of resolution impact,
+      pacing_analysis: Examination of dramatic rhythm
+    }
+
+    character_development: {
+      arc_progression: Evaluation of character growth,
+      motivation_clarity: Assessment of character drives,
+      conflict_impact: Analysis of character challenges
+    }
+
+    theme_integration: {
+      message_delivery: Review of central message implementation,
+      subplot_alignment: Assessment of supporting elements,
+      resolution_effectiveness: Analysis of thematic payoff
+    }
+
+    improvement_recommendations: {
+      structural_adjustments: Specific plot point refinements,
+      character_enhancements: Character arc strengthening suggestions,
+      pacing_optimization: Timing and tension adjustment proposals
+    }
+
   agent: outline_reviewer
