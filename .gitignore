@@ -1,3 +1,5 @@
 .env
 __pycache__/
 lib/
+character_builder/.env
+generate_outline/.env

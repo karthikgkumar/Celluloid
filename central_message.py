@@ -4,7 +4,6 @@ from langchain_core.messages import SystemMessage, HumanMessage
 from typing import Dict, Optional
 import os
 from dotenv import load_dotenv
-
 load_dotenv()
 
 class CentralMessageTool:

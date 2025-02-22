@@ -1,0 +1,79 @@
+analyze_character_inputs:
+ description: >
+   Analyze the provided abstract, logline, central message, and character role
+   assignments to identify key character development opportunities
+ expected_output: >
+   Initial character development framework aligned with story themes
+ agent: character_analyzer
+
+define_moral_weaknesses:
+ description: >
+   Determine each character's foundational flawed beliefs and moral weaknesses
+   based on their role and the story's central message
+ expected_output: >
+   Clearly articulated moral weaknesses that drive character behavior
+ agent: moral_weakness_developer
+
+design_physical_traits:
+ description: >
+   Create physical characteristics and behavioral patterns that manifest from
+   each character's moral weaknesses
+ expected_output: >
+   List of specific physical traits and behaviors that reflect internal flaws
+ agent: physical_trait_designer
+
+develop_character_desires:
+ description: >
+   Craft primary wants/goals for each character that create dramatic tension
+   while reflecting their moral weaknesses
+ expected_output: >
+   Clear character desires that drive plot and connect to moral flaws
+ agent: desire_architect
+
+identify_self_deceptions:
+ description: >
+   Define the specific lies each character tells themselves to avoid
+   confronting their moral weaknesses
+ expected_output: >
+   Character-specific self-deceptions that prevent growth
+ agent: self_deception_analyst
+
+determine_character_needs:
+ description: >
+   Establish what each character must learn or understand to overcome their
+   moral weaknesses
+ expected_output: >
+   Character growth requirements tied to moral weaknesses
+ agent: character_needs_developer
+
+create_signature_dialogue:
+ description: >
+   Develop distinctive verbal expressions that reveal character psychology
+   and reflect their core traits
+ expected_output: >
+   Character-specific dialogue samples that encapsulate their personality
+ agent: dialogue_personality_writer
+
+assemble_character_profiles:
+ description: >
+   Integrate all character elements into cohesive profiles that maintain
+   internal consistency
+ expected_output: >
+   Complete character profiles following the provided template format
+ agent: character_profile_assembler
+
+validate_character_arcs:
+ description: >
+   Review character profiles to ensure all elements support meaningful
+   character development
+ expected_output: >
+   Verification that character elements create compelling growth opportunities
+ agent: character_analyzer
+
+ensure_thematic_alignment:
+ description: >
+   Verify all character elements reinforce the story's central message
+   and themes
+ expected_output: >
+   Analysis of how character profiles support overall story themes
+ agent: character_profile_assembler
