@@ -1,17 +1,30 @@
-research_task:
+# tasks.yaml
+outline_creation_task:
   description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is 2024.
+    Create a comprehensive three-act outline for a screenplay based on the provided {abstract}, {logline}, {central_message}, 
+    and {character_profile}, considering the {genre} if specified. Break down the narrative into essential components while 
+    ensuring perfect dramatic pacing across all three acts. The outline should demonstrate mastery of screenplay structure
+    and craft a compelling story that effectively delivers on the core concept.
   expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
-  agent: researcher
+    A comprehensive outline dictionary containing:
+    - Detailed breakdown of all three acts
+    - Key plot points and turning points
+    - Character arc progression aligned with character profiles
+    - Major story beats with optimal dramatic pacing
+    - Integration of themes from abstract and central message
+  agent: outline_architect
 
-reporting_task:
+outline_review_task:
   description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    Analyze the generated outline to validate structural integrity and alignment with the original {abstract}, {logline}, 
+    {central_message} and {character_profile}. Review for narrative cohesion, dramatic impact, and proper character arc 
+    development. Identify any structural weaknesses and provide specific recommendations to strengthen the story arcs
+    while maintaining fidelity to the core concept.
   expected_output: >
-    A fully fledged report with the main topics, each with a full section of information.
-    Formatted as markdown without '```'
-  agent: reporting_analyst
+    A detailed analysis of the outline including:
+    - Evaluation of three-act structure effectiveness
+    - Assessment of plot point placement and pacing
+    - Analysis of character arc progression and development
+    - Specific recommendations for structural improvements
+    - Validation of theme integration and concept alignment
+  agent: outline_reviewer
