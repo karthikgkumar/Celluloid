@@ -17,97 +17,97 @@ class ActOneBuilder():
     tasks_config = 'config/tasks.yaml'
 
     @agent
-    def plot_architect(self) -> Agent:
+    def act_one_plot_architect(self) -> Agent:
         return Agent(
             config=self.agents_config['act_one_plot_architect'],
             verbose=True
         )
 
     @agent
-    def scene_architect(self) -> Agent:
+    def act_one_scene_architect(self) -> Agent:
         return Agent(
             config=self.agents_config['act_one_scene_architect'],
             verbose=True
         )
 
     @agent
-    def dialogue_specialist(self) -> Agent:
+    def act_one_dialogue_specialist(self) -> Agent:
         return Agent(
             config=self.agents_config['act_one_dialogue_specialist'],
             verbose=True
         )
 
     @agent
-    def character_architect(self) -> Agent:
+    def act_one_character_architect(self) -> Agent:
         return Agent(
             config=self.agents_config['act_one_character_architect'],
             verbose=True
         )
 
     @agent
-    def world_builder(self) -> Agent:
+    def act_one_world_builder(self) -> Agent:
         return Agent(
             config=self.agents_config['act_one_world_builder'],
             verbose=True
         )
 
     @agent
-    def integration_manager(self) -> Agent:
+    def act_one_integration_manager(self) -> Agent:
         return Agent(
             config=self.agents_config['act_one_integration_manager'],
             verbose=True
         )
 
-    @task
-    def outline_creation(self) -> Task:
-        return Task(
-            config=self.tasks_config['outline_creation_task']
-        )
+    # @task
+    # def outline_creation_task(self) -> Task:
+    #     return Task(
+    #         config=self.tasks_config['outline_creation_task']
+    #     )
 
     @task
-    def plot_structure(self) -> Task:
+    def plot_structure_task(self) -> Task:
         return Task(
             config=self.tasks_config['plot_structure_task']
         )
 
     @task
-    def scene_development(self) -> Task:
+    def scene_development_task(self) -> Task:
         return Task(
             config=self.tasks_config['scene_development_task']
         )
 
     @task
-    def dialogue_development(self) -> Task:
+    def dialogue_development_task(self) -> Task:
         return Task(
             config=self.tasks_config['dialogue_development_task']
         )
 
     @task
-    def character_introduction(self) -> Task:
+    def character_introduction_task(self) -> Task:
         return Task(
             config=self.tasks_config['character_introduction_task']
         )
 
     @task
-    def world_building(self) -> Task:
+    def world_building_task(self) -> Task:
         return Task(
             config=self.tasks_config['world_building_task']
         )
 
     @task
-    def integration(self) -> Task:
+    def integration_task(self) -> Task:
         return Task(
             config=self.tasks_config['integration_task']
         )
 
     @task
-    def quality_review(self) -> Task:
+    def quality_review_task(self) -> Task:
         return Task(
             config=self.tasks_config['quality_review_task']
         )
 
     @task
-    def final_assembly(self) -> Task:
+    def final_assembly_task(self) -> Task:
         return Task(
             config=self.tasks_config['final_assembly_task']
         )

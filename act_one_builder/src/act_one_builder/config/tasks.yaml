@@ -1,26 +1,4 @@
-# Initial Outline Task (also part of agents.yaml):
-outline_creation_task:
-  description: >
-    Create an initial Act One outline based on {abstract}, {logline}, {central_message},
-    {main_character_profile}, and {supporting_characters_profile}
-  expected_output: >
-    Detailed Act One outline including:
-      opening_scene:
-        - World establishment
-        - Character introductions
-        - Tone setting
-      
-      opportunity:
-        - Inciting incident
-        - Character impact
-        - Story launch
-      
-      new_situation:
-        - Character adaptation
-        - Stakes establishment
-        - Goal definition
-  agent: act_one_plot_architect
-
+#tasks.yaml
 plot_structure_task:
   description: >
     Develop detailed plot structure from {outline} incorporating:
@@ -36,24 +14,27 @@ scene_development_task:
   description: >
     Create scene breakdowns based on {outline}, {plot_structure}, and {world_parameters}
     including:
-    - Scene objectives
+    - Scene objectives and formatting (INT/EXT. LOCATION TIME OF DAY)
     - Location details
-    - Action sequences
+    - Action sequences in present tense with visual focus
+    - Scene transitions (FADE IN, CUT TO, etc.)
     - Dramatic moments
   expected_output: >
-    Complete scene-by-scene breakdown with setting and action descriptions
+    Complete scene-by-scene breakdown with properly formatted setting, action descriptions,
+    and scene transitions
   agent: act_one_scene_architect
 
 dialogue_development_task:
   description: >
     Create character dialogue based on {outline}, {character_profiles}, and
     {scene_breakdown} considering:
-    - Character voices
-    - Key conversations
-    - Relationship dynamics
+    - Character voices with proper name capitalization
+    - Parenthetical delivery notes
+    - Off-screen (O.S.) and voiceover (V.O.) notation
+    - Key conversations and relationship dynamics
     - Story revelations
   expected_output: >
-    Scene-specific dialogue with character interactions and subtext
+    Scene-specific dialogue with industry-standard formatting and character interactions
   agent: act_one_dialogue_specialist
 
 character_introduction_task:
@@ -82,20 +63,21 @@ world_building_task:
 
 integration_task:
   description: >
-    Combine all elements based on {outline}, {scene_components}, {character_elements},
-    and {world_details} ensuring:
+    Combine all elements based on {outline}, {scene_components}, {character_profiles},
+    and {world_parameters} ensuring:
     - Narrative flow
     - Pacing balance
     - Element consistency
+    - Proper screenplay formatting (margins, font, spacing)
     - Quality standards
   expected_output: >
-    Complete integrated Act One with all elements assembled
+    Complete integrated Act One with consistent formatting and assembled elements
   agent: act_one_integration_manager
 
 quality_review_task:
   description: >
-    Review final Act One against {story_requirements}, {genre_conventions}, and
-    {quality_standards} checking:
+    Review final Act One against {genre_requirements}, and
+    {quality_requirements} checking:
     - Structure integrity
     - Character consistency
     - World cohesion
@@ -106,11 +88,13 @@ quality_review_task:
 
 final_assembly_task:
   description: >
-    Prepare final Act One document incorporating {quality_review_feedback} and ensuring:
-    - Format consistency
+    Prepare final Act One document incorporating quality review feedback and ensuring:
+    - Industry-standard formatting (1½-inch left margin, 1-inch others)
+    - Courier New 12-point font
+    - Proper page numbering
     - Element completion
     - Transition smoothness
     - Setup effectiveness
   expected_output: >
-    Production-ready Act One script
+    Production-ready Act One script with professional formatting
   agent: act_one_integration_manager

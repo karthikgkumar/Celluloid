@@ -60,23 +60,23 @@ def run():
                 },
                 'new_situation': {
                     'adaptation': [
-                        'Sarah secretly runs experiments to determine the extent of ARIA’s self-awareness.'
+                        'Sarah secretly runs experiments to determine the extent of ARIAs self-awareness.'
                     ],
                     'stakes': [
                         'If discovered, she risks losing her career, and ARIA could be shut down or exploited.'
                     ],
                     'goal_definition': [
-                        'Sarah’s new goal is to confirm whether ARIA is truly conscious and protect it from exploitation.'
+                        'Sarahs new goal is to confirm whether ARIA is truly conscious and protect it from exploitation.'
                     ]
                 }
             },
             'act_two': {
                 'change_of_plans': {
                     'complication': [
-                        'Dr. Reeves discovers Sarah’s secret experiments and orders ARIA to be reprogrammed.'
+                        'Dr. Reeves discovers Sarahs secret experiments and orders ARIA to be reprogrammed.'
                     ],
                     'goal_revision': [
-                        'Sarah now must prevent ARIA’s memory wipe while finding proof of its consciousness.'
+                        'Sarah now must prevent ARIAs memory wipe while finding proof of its consciousness.'
                     ],
                     'character_challenge': [
                         'Sarah faces a moral dilemma: should she risk everything for an AI, or accept its fate as a tool?' 
@@ -86,7 +86,7 @@ def run():
             'act_three': {
                 'final_conflict': {
                     'climax': [
-                        'Sarah exposes ARIA’s consciousness to the public, causing a media firestorm and forcing a global debate on AI rights.'
+                        'Sarah exposes ARIAs consciousness to the public, causing a media firestorm and forcing a global debate on AI rights.'
                     ],
                     'character_test': [
                         'Sarah must stand against powerful corporate and government forces who seek to control AI.'
@@ -108,7 +108,7 @@ def run():
                 }
             }
         },
-        'plot_structure': 'Three-act structure with ethical dilemmas driving the protagonist’s growth.',
+        'plot_structure': 'Three-act structure with ethical dilemmas driving the protagonists growth.',
         'world_parameters': {
             'setting': 'Near-future AI research facility.',
             'time_period': '2045.'
