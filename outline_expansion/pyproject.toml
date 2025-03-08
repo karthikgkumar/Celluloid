@@ -1,0 +1,23 @@
+[project]
+name = "outline_expansion"
+version = "0.1.0"
+description = "outline_expansion using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.102.0,<1.0.0"
+]
+
+[project.scripts]
+outline_expansion = "outline_expansion.main:run"
+run_crew = "outline_expansion.main:run"
+train = "outline_expansion.main:train"
+replay = "outline_expansion.main:replay"
+test = "outline_expansion.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

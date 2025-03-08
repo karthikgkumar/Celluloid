@@ -1,0 +1,13 @@
+scene_expansion_task:
+  description: >
+    Create a 30-scene breakdown from the outline using {abstract}, {logline}, {central_message}, {main_character_profile}, {supporting_characters_profile}, {genre} and {outline}, generating one comprehensive sentence per scene that captures the key narrative elements.
+  expected_output: >
+    A scene-by-scene breakdown of 30 scenes, with each scene described in a single detailed sentence.
+  agent: scene_expander
+
+scene_review_task:
+  description: >
+    Review each scene's single-sentence description to ensure it effectively captures all necessary narrative elements.
+  expected_output: >
+    Review report evaluating how well each scene's sentence conveys the complete story moment.
+  agent: detail_reviewer
