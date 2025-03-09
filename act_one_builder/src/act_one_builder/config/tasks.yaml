@@ -1,100 +1,156 @@
+
 #tasks.yaml
 plot_structure_task:
   description: >
-    Develop detailed plot structure from {outline} incorporating:
-    - Opening scene framework
-    - Inciting incident
-    - Story launch sequence
-    - Initial conflicts
+    Transform {outline} into a unique screenplay scene, incorporating:
+    - Scene headings (INT/EXT. {setting_parameters} - TIME)
+    - Action lines in present tense reflecting {outline}
+    - Character names in ALL CAPS on first appearance
+    - Dialogue blocks with character names centered and ALL CAPS
+    - Parentheticals for delivery notes
+    Must incorporate {abstract}, {logline}, {central_message}, {main_character_profile}, {supporting_characters_profile}, {plot_structure}, {world_parameters}, {setting_parameters}, {genre_requirements}, {scene_components}, {quality_requirements}.
+    Must explicitly identify this scene's unique position in the narrative (e.g., "Scene #X following [previous event]") and ensure it advances the plot in ways not covered by other scenes.
   expected_output: >
-    Detailed plot structure with scene progression and dramatic beats
+    A uniquely formatted screenplay scene with proper scene heading, action, and dialogue formatting that fulfills a distinct narrative purpose
   agent: act_one_plot_architect
 
 scene_development_task:
   description: >
-    Create scene breakdowns based on {outline}, {plot_structure}, and {world_parameters}
-    including:
-    - Scene objectives and formatting (INT/EXT. LOCATION TIME OF DAY)
-    - Location details
-    - Action sequences in present tense with visual focus
-    - Scene transitions (FADE IN, CUT TO, etc.)
-    - Dramatic moments
+    Write a cinematically structured scene based on {outline}, incorporating:
+    - Scene-specific heading (INT/EXT. {setting_parameters} - TIME)
+    - Visual action descriptions reflecting {setting_parameters}
+    - Technical directions appropriate to {genre_requirements}
+    - Scene transitions that maintain story flow
+    - Proper screenplay spacing and {quality_requirements}
+    Must incorporate {abstract}, {logline}, {central_message}, {main_character_profile}, {supporting_characters_profile}, {plot_structure}, {world_parameters}, {setting_parameters}, {genre_requirements}, {scene_components}, {quality_requirements}.
+    Must verify and document how this scene differs from all previously created scenes in terms of setting, character interactions, plot advancement, and dramatic purpose.
+    Must adhere to 7-line per scene guideline while ensuring comprehensive storytelling.
   expected_output: >
-    Complete scene-by-scene breakdown with properly formatted setting, action descriptions,
-    and scene transitions
+    A distinct scene with industry-standard screenplay elements that advances the story in a way not addressed by other scenes
   agent: act_one_scene_architect
 
 dialogue_development_task:
   description: >
-    Create character dialogue based on {outline}, {character_profiles}, and
-    {scene_breakdown} considering:
-    - Character voices with proper name capitalization
-    - Parenthetical delivery notes
-    - Off-screen (O.S.) and voiceover (V.O.) notation
-    - Key conversations and relationship dynamics
-    - Story revelations
+    Create scene-specific dialogue exchanges following screenplay format:
+    - Character names in ALL CAPS centered above dialogue
+    - Dialogue reflecting character profiles, goals, and current emotional states
+    - Supporting character interactions
+    - (parentheticals) for unique delivery notes
+    - O.S. and V.O. notations as needed
+    - Proper line spacing between dialogue blocks
+    Must incorporate {main_character_profile}, {supporting_characters_profile}, {genre_requirements}, {central_message}.
+    Must track all previous dialogue exchanges to ensure this scene's conversations:
+    - Reflect current character knowledge (what they've learned so far)
+    - Show evolution of relationships from previous scenes
+    - Address new topics or explore previous topics from different angles
+    - Avoid repeating conversational patterns or subject matter
   expected_output: >
-    Scene-specific dialogue with industry-standard formatting and character interactions
+    Unique dialogue sequences that reflect character dynamics, current emotional states, and story progression specific to this scene
   agent: act_one_dialogue_specialist
 
 character_introduction_task:
   description: >
-    Design character entrances and developments based on {outline}, {character_profiles},
-    and {plot_structure} including:
-    - First appearances
-    - Character moments
-    - Relationship establishments
-    - Arc setups
+    Craft character introductions and developments in proper screenplay format:
+    - Character names in ALL CAPS on first appearance
+    - Clear physical descriptions in action lines
+    - Characteristic actions that reveal personality
+    - Meaningful character interactions through dialogue and action
+    Must incorporate {main_character_profile}, {supporting_characters_profile}, {genre_requirements}, {central_message}.
+    Must document each character's current development stage by referencing:
+    - Previous character actions and decisions
+    - How this scene reveals new aspects of their personality
+    - How their motivations or objectives have evolved
+    - Current relationship dynamics specific to this point in the story
   expected_output: >
-    Character introduction sequences and development points
+    Formatted character developments and interactions that clearly show progression from previous scenes
   agent: act_one_character_architect
 
 world_building_task:
   description: >
-    Establish story world based on {outline}, {setting_parameters}, and
-    {genre_requirements} including:
-    - Location descriptions
-    - Environmental details
-    - World rules
-    - Atmosphere creation
+    Establish unique setting and atmosphere in screenplay format:
+    - Detailed scene headings incorporating {world_parameters}
+    - Visual descriptions of {setting_parameters}
+    - Environmental details that enhance {setting_parameters}
+    - Technical directions appropriate to {genre_requirements}
+    Must incorporate {world_parameters}, {setting_parameters}, {genre_requirements}.
+    Must track all previously used settings and ensure this scene offers:
+    - A new physical location or area within the Silicon Valley research facility
+    - Different time of day or lighting conditions from previous scenes
+    - Unique environmental elements not previously shown
+    - Setting details that specifically serve this scene's dramatic purpose
   expected_output: >
-    Detailed world-building elements and setting descriptions
+    Formatted scene descriptions with proper screenplay world-building elements that provide a fresh perspective on the story world
   agent: act_one_world_builder
+
+scene_memory_tracking_task:
+  description: >
+    Before finalizing each scene, catalog and verify its uniqueness against all previously generated scenes:
+    - Document key plot events that occur in this scene
+    - List character developments and interactions unique to this scene
+    - Record setting elements and atmospheric details used
+    - Note dialogue topics and conversation patterns
+    - Identify the specific dramatic purpose this scene serves
+    Must flag any potential duplication or redundancy before scene approval.
+  expected_output: >
+    Comprehensive uniqueness verification report confirming this scene contributes new elements to the story
+  agent: scene_memory_tracker
 
 integration_task:
   description: >
-    Combine all elements based on {outline}, {scene_components}, {character_profiles},
-    and {world_parameters} ensuring:
-    - Narrative flow
-    - Pacing balance
-    - Element consistency
-    - Proper screenplay formatting (margins, font, spacing)
-    - Quality standards
+    Combine all elements into proper screenplay format while ensuring:
+    - Quality requirements format standards
+    - Quality requirements target length guidelines (7 lines per scene)
+    - Consistency with outline
+    - Proper scene transitions
+    - Unique content for each scene
+    Must explicitly compare this scene against all previously generated scenes to prevent duplication by verifying:
+    - Different plot advancement
+    - Setting variation
+    - Character progression
+    - Distinct dramatic purpose
+    - Unique dialogue exchanges
   expected_output: >
-    Complete integrated Act One with consistent formatting and assembled elements
+    Complete and unique screenplay scene with industry-standard formatting that adds new narrative value
   agent: act_one_integration_manager
+
+workflow_control_task:
+  description: >
+    Orchestrate the scene creation process by:
+    - Reviewing this scene against the complete story outline
+    - Explicitly positioning this scene within the narrative timeline
+    - Establishing clear connections to preceding and subsequent scenes
+    - Enforcing compliance with the 7-line per scene requirement
+    - Verifying this scene advances the story in a meaningful and unique way
+    Must reject any scene that duplicates content or purpose of previously generated scenes.
+  expected_output: >
+    Verification that this scene fulfills a unique and necessary function within the screenplay
+  agent: workflow_controller
 
 quality_review_task:
   description: >
-    Review final Act One against {genre_requirements}, and
-    {quality_requirements} checking:
-    - Structure integrity
-    - Character consistency
-    - World cohesion
-    - Dramatic effectiveness
+    Review screenplay formatting and content:
+    - Scene heading accuracy
+    - Dialogue consistency with current character knowledge
+    - Action description uniqueness
+    - Character development continuity from previous scenes
+    - Appropriate scene transitions
+    - Technical direction variety
+    - Overall professional presentation
+    Must ensure proper integration of all elements while maintaining format standards and scene uniqueness.
   expected_output: >
-    Quality assessment report with any needed revision recommendations
+    Detailed review ensuring scene uniqueness, narrative progression, and proper formatting
   agent: act_one_integration_manager
 
 final_assembly_task:
   description: >
-    Prepare final Act One document incorporating quality review feedback and ensuring:
-    - Industry-standard formatting (1½-inch left margin, 1-inch others)
-    - Courier New 12-point font
-    - Proper page numbering
-    - Element completion
-    - Transition smoothness
-    - Setup effectiveness
+    Finalize unique screenplay scene ensuring:
+    - Perfect formatting standards
+    - Scene-specific elements that advance story
+    - Technical accuracy and variety
+    - Professional presentation
+    - Industry-standard layout
+    - Adherence to 7-line per scene guideline
+    Must maintain proper integration of all elements and technical requirements while verifying this scene contributes unique content not found in other scenes.
   expected_output: >
-    Production-ready Act One script with professional formatting
+    Production-ready, unique screenplay scene with complete professional formatting that serves a distinct narrative purpose
   agent: act_one_integration_manager

@@ -1,13 +1,24 @@
 scene_expansion_task:
   description: >
-    Create a 30-scene breakdown from the outline using {abstract}, {logline}, {central_message}, {main_character_profile}, {supporting_characters_profile}, {genre} and {outline}, generating one comprehensive sentence per scene that captures the key narrative elements.
+    Create a sequential 7-scene outline using {abstract}, {logline}, {central_message}, {main_character_profile}, {supporting_characters_profile}, {genre} and {outline}, where each scene is described in a single sentence that flows naturally into the next scene. Ensure that:
+    - Each sentence clearly depicts the key action or development in that scene
+    - Sentences connect logically to form a coherent narrative progression
+    - Character actions and motivations link scenes together smoothly
   expected_output: >
-    A scene-by-scene breakdown of 30 scenes, with each scene described in a single detailed sentence.
+    A dictionary of 7 scenes, where:
+    - Keys are "scene_1" through "scene_7"
+    - Values are single sentences describing the key events and developments
   agent: scene_expander
 
 scene_review_task:
   description: >
-    Review each scene's single-sentence description to ensure it effectively captures all necessary narrative elements.
+    Review the 7 single-sentence scene descriptions to verify that:
+    - Each sentence flows naturally from the previous one
+    - The narrative progression is clear and logical
+    - Character actions and motivations connect scenes coherently
+    - Every sentence clearly depicts its scene's key events
   expected_output: >
-    Review report evaluating how well each scene's sentence conveys the complete story moment.
+    A dictionary of 7 scenes, where:
+    - Keys are "scene_1" through "scene_7"
+    - Values are single sentences describing the key events and developments
   agent: detail_reviewer
