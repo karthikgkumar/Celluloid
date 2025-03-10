@@ -16,54 +16,57 @@ def run():
     Run the crew.
     """
     inputs = {
-    'abstract': """A gritty investigative thriller about a journalist who uncovers 
-                  a conspiracy involving corporate corruption and murder, forcing him 
-                  to confront his own demons while pursuing the truth.""",
-    
-    'logline': """A troubled investigative journalist must navigate a web of corporate 
-                  corruption and personal demons to expose a powerful businessman's 
-                  murderous secret before more lives are lost.""",
-    
-    'central_message': """The pursuit of truth requires confronting both external 
-                         corruption and internal darkness.""",
-    
-    'main_character_profile': """
-    Name: Ethan Cole
-    Age: 35
-    Occupation: Investigative Journalist
-    Personality: Intelligent, obsessive, morally conflicted
-    Background: Ethan grew up in a rough neighborhood, using his sharp mind to escape 
-                a life of crime. He gained fame for uncovering high-profile scandals 
-                but struggles with past trauma and a drinking problem.
-    Motivation: Determined to expose corruption, but haunted by a past case that went 
-                horribly wrong.
-    Character Arc: Ethan starts as a lone wolf who trusts no one, but through his 
-                  latest case, he learns the value of connection and truth over 
-                  sensationalism.
-    Flaws: Stubborn, reckless, prone to self-destruction.
-    Strengths: Sharp intuition, relentless pursuit of the truth.
-    """,
-    
-    'supporting_characters_profile': """
-    1. Dr. Lillian Graves (Psychologist, 40s)
-       - Ethan's therapist, intelligent but emotionally guarded
-       - She holds a secret about Ethan's past that could break him
-
-    2. Marcus "Mack" DeLuca (Cop, 50s)
-       - Ethan's reluctant ally, a veteran detective who has seen too much
-       - He helps Ethan navigate the criminal underworld but warns him not to push too far
-
-    3. Sophia Reyes (Tech Specialist, 28)
-       - A hacker who helps Ethan dig into classified files
-       - Sarcastic, street-smart, and secretly on the run from her own past
-
-    4. Vincent Kane (Antagonist, 45)
-       - A powerful businessman hiding a dark secret
-       - He manipulates the media and law enforcement to cover up crimes
-    """,
-    
-    'genre': "Investigative Thriller"
-}
+        "abstract": "A gritty investigative thriller about a journalist who uncovers a conspiracy involving corporate corruption and murder, forcing him to confront his own demons while pursuing the truth.",
+        
+        "logline": "A troubled investigative journalist must navigate a web of corporate corruption and personal demons to expose a powerful businessman's murderous secret before more lives are lost.",
+        
+        "central_message": "The pursuit of truth requires confronting both external corruption and internal darkness.",
+        
+        "main_character_profile": {
+            "name": "Ethan Cole",
+            "age": 35,
+            "occupation": "Investigative Journalist",
+            "personality": "Intelligent, obsessive, morally conflicted",
+            "background": "Ethan grew up in a rough neighborhood, using his sharp mind to escape a life of crime. He gained fame for uncovering high-profile scandals but struggles with past trauma and a drinking problem.",
+            "motivation": "Determined to expose corruption, but haunted by a past case that went horribly wrong.",
+            "character_arc": "Ethan starts as a lone wolf who trusts no one, but through his latest case, he learns the value of connection and truth over sensationalism.",
+            "flaws": "Stubborn, reckless, prone to self-destruction",
+            "strengths": "Sharp intuition, relentless pursuit of the truth"
+        },
+        
+        "supporting_characters_profile": [
+            {
+                "name": "Dr. Lillian Graves",
+                "role": "Psychologist",
+                "age": "40s",
+                "description": "Ethan's therapist, intelligent but emotionally guarded",
+                "secret": "She holds a secret about Ethan's past that could break him"
+            },
+            {
+                "name": "Marcus 'Mack' DeLuca",
+                "role": "Cop",
+                "age": "50s",
+                "description": "Ethan's reluctant ally, a veteran detective who has seen too much",
+                "relationship": "He helps Ethan navigate the criminal underworld but warns him not to push too far"
+            },
+            {
+                "name": "Sophia Reyes",
+                "role": "Tech Specialist",
+                "age": 28,
+                "description": "A hacker who helps Ethan dig into classified files",
+                "background": "Sarcastic, street-smart, and secretly on the run from her own past"
+            },
+            {
+                "name": "Vincent Kane",
+                "role": "Antagonist",
+                "age": 45,
+                "description": "A powerful businessman hiding a dark secret",
+                "methods": "He manipulates the media and law enforcement to cover up crimes"
+            }
+        ],
+        
+        "genre": "Investigative Thriller"
+    }
     GenerateOutline().crew().kickoff(inputs=inputs)
 
 run()
@@ -84,15 +87,15 @@ run()
 #       - This opportunity sparks Ethan's obsessive nature, igniting old instincts and springing him into action. He reflects on his past failures, which resurfaces his fears 
 # of inadequacy.
 #     story_launch:
-#       - Driven by the promise of unveiling a mighty conspiracy, Ethan decides to investigate Kane, breaking the icy isolation he’s built around himself.
+#       - Driven by the promise of unveiling a mighty conspiracy, Ethan decides to investigate Kane, breaking the icy isolation he's built around himself.
 
 #   new_situation:
 #     adaptation:
-#       - Ethan begins to gather evidence through interviews with disgruntled former employees and exploring Kane’s corporate ties. His work re-establishes some of his old connections, including Sophia, who reluctantly agrees to help.
+#       - Ethan begins to gather evidence through interviews with disgruntled former employees and exploring Kane's corporate ties. His work re-establishes some of his old connections, including Sophia, who reluctantly agrees to help.
 #     stakes:
 #       - As Ethan digs deeper, he finds evidence of further potential murders linked to Kane, setting heightened stakes beyond just career dissatisfaction.
 #     goal_definition:
-#       - Ethan’s new goal is to connect the dots between the workplace accident, the ensuing cover-up, and the shadowy dealings of Vincent Kane to expose the truth without succumbing to his demons.
+#       - Ethan's new goal is to connect the dots between the workplace accident, the ensuing cover-up, and the shadowy dealings of Vincent Kane to expose the truth without succumbing to his demons.
 
 # act_two:
 #   change_of_plans:
@@ -106,11 +109,11 @@ run()
 
 #   progress:
 #     escalation:
-#       - Ethan, with Sophia’s tech skills, hacks into Kane's secure corporate communications. They uncover a web of illicit activities, leading them to witness a murder committed to silence a whistleblower.
+#       - Ethan, with Sophia's tech skills, hacks into Kane's secure corporate communications. They uncover a web of illicit activities, leading them to witness a murder committed to silence a whistleblower.
 #     character_growth:
 #       - Ethan starts to realize that he cannot solve everything alone. He reluctantly reaches out to Mack, who aids him in navigating police hostility towards Ethan's pursuits.
 #     subplot_integration:
-#       - The tension increases as Mack reveals his own professional corruption dilemmas, paralleling Ethan’s internal battles and emphasizing the story’s themes.
+#       - The tension increases as Mack reveals his own professional corruption dilemmas, paralleling Ethan's internal battles and emphasizing the story's themes.
 
 #   point_of_no_return:
 #     critical_choice:
@@ -119,11 +122,11 @@ run()
 #     commitment:
 #       - Ethan decides to go all-in with the investigation, aligning his aims with those of Mack and Sophia despite the personal risks involved.
 #     stakes_elevation:
-#       - This choice heightens personal stakes as threats against Ethan’s life are made directly by Kane’s henchmen, compelling him into hiding.
+#       - This choice heightens personal stakes as threats against Ethan's life are made directly by Kane's henchmen, compelling him into hiding.
 
 #   raising_stakes:
 #     conflicts:
-#       - Ethan faces growing hostility from both Kane’s corporate staff, who try to discredit him, and police, who warn him to back off, highlighting a conspiracy that extends to law enforcement.
+#       - Ethan faces growing hostility from both Kane's corporate staff, who try to discredit him, and police, who warn him to back off, highlighting a conspiracy that extends to law enforcement.
 #     obstacles:
 #       - As Ethan collects proof, he struggles against both internal pressures from his trauma and external pressures from those trying to silence him.
 #     character_pressure:
@@ -131,11 +134,11 @@ run()
 
 #   lowest_point:
 #     crisis:
-#       - In a climactic moment, Ethan’s attempts to publish his findings lead to a personal loss—one of his closest allies is killed in retaliation for their investigation.  
+#       - In a climactic moment, Ethan's attempts to publish his findings lead to a personal loss—one of his closest allies is killed in retaliation for their investigation.  
 #     character_break:
 #       - The betrayal shatters Ethan's fragile emotional state, pushing him towards a breakdown and a near fatal relapse into alcoholism.
 #     setup_resolution:
-#       - The tragedy forces Ethan to confront his addiction openly, leading back to Dr. Lillian Graves who reveals long-buried truths about Ethan’s past that reshape his perception of himself.
+#       - The tragedy forces Ethan to confront his addiction openly, leading back to Dr. Lillian Graves who reveals long-buried truths about Ethan's past that reshape his perception of himself.
 
 # act_three:
 #   final_conflict:
@@ -149,7 +152,7 @@ run()
 
 #   conclusion:
 #     resolution:
-#       - With Kane arrested and his crimes exposed, Ethan’s articles spark a massive surge against corporate corruption. He restores his credibility and begins to heal from his past.
+#       - With Kane arrested and his crimes exposed, Ethan's articles spark a massive surge against corporate corruption. He restores his credibility and begins to heal from his past.
 #     character_arc:
 #       - Ethan transforms from a reluctant lone wolf into a cooperative journalist who values the connections formed through trust in his allies, embracing life beyond the thrill of the chase.
 #     theme_resolution:
@@ -201,7 +204,7 @@ run()
 # of the cover-up inadvertently leads to a setback could heighten tension.
 
 #   character_enhancements:
-#     - Further develop Dr. Lillian Graves’s role to maximize her impact on Ethan’s arc. Perhaps revealing more of her personal struggles or intertwining elements of her own secret with Ethan's journey can deepen emotional stakes.
+#     - Further develop Dr. Lillian Graves's role to maximize her impact on Ethan's arc. Perhaps revealing more of her personal struggles or intertwining elements of her own secret with Ethan's journey can deepen emotional stakes.
 
 #   pacing_optimization:
 #     - Introduce brief moments of respite within high-intensity sequences to allow audiences to breathe, enhancing emotional weight. This would create a rhythm that allows for tension buildup coupled with moments of vulnerability among characters.
