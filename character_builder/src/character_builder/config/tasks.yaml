@@ -80,7 +80,7 @@ ensure_thematic_alignment:
     "main_characters": [
       {
         "name": "<Character Name>",
-        "role_in_story": "<Main Character/Supporting>",
+        "role_in_story": "<Main Character>",
         "core_motivation": "<Primary force driving their decisions>",
         "internal_conflict": "<Struggles between personal desires and external pressures>",
         "moral_weaknesses": "<Flaws or justifications leading to poor decisions>",

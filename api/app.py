@@ -162,9 +162,15 @@ async def generate_character(request: CharacterRequest):
             try:
                 # Parse the JSON string
                 parsed_result = json.loads(raw_result)
+
+                # Adjust the parsed result to match CharacterResponse structure
+                character_response_data = {
+                    "abstract": parsed_result.get("abstract", ""),  # Ensure abstract is present
+                    "characters": parsed_result.get("main_characters", [])  # Ensure characters is present
+                }
                 
                 # Validate the parsed result against CharacterResponse
-                return CharacterResponse(**parsed_result)
+                return CharacterResponse(**character_response_data)
             except json.JSONDecodeError as e:
                 print("JSON Decode Error:", e)
                 raise HTTPException(status_code=500, detail=f"Error parsing JSON from CharacterBuilder: {e}")

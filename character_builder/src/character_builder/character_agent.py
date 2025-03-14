@@ -30,7 +30,8 @@ class CharacterResponse(BaseModel):
     logline: Optional[str] = None
     central_message: Optional[str] = None
     genre: Optional[str] = None
-    characters: List[Dict[str, Any]]  # A list of character dictionaries
+    main_characters: List[Dict[str, Any]]
+    supporting_characters: List[Dict[str, Any]]
 
 @app.post("/character-agent/", response_model=CharacterResponse)
 async def generate_character(request: CharacterRequest):
@@ -44,11 +45,7 @@ async def generate_character(request: CharacterRequest):
 
         # Run the character agent
         crew_result = character_builder.crew().kickoff(inputs=inputs)
-
-        # Debugging output
-        print("Type of result:", type(crew_result))
         
-        # Extract the raw JSON from the CrewOutput object
         if hasattr(crew_result, 'raw'):
             raw_result = crew_result.raw
             # If raw_result starts with ```json and ends with ```, strip those markers
@@ -56,17 +53,29 @@ async def generate_character(request: CharacterRequest):
                 raw_result = raw_result[7:-3].strip()
             
             try:
-                # Parse the JSON string
-                parsed_result = json.loads(raw_result)
+                # Clean the string of invalid control characters
+                cleaned_result = ''.join(char for char in raw_result if ord(char) >= 32 or char in '\n\r\t')
                 
-                # Validate the parsed result against CharacterResponse
-                return CharacterResponse(**parsed_result)
+                # Parse the JSON string
+                parsed_result = json.loads(cleaned_result)
+                
+                # Construct the response
+                response = {
+                    "abstract": request.abstract,
+                    "logline": request.logline,
+                    "central_message": request.central_message,
+                    "genre": None,
+                    "main_characters": parsed_result.get("main_characters", []),
+                    "supporting_characters": parsed_result.get("supporting_characters", [])
+                }
+                
+                return CharacterResponse(**response)
             except json.JSONDecodeError as e:
                 print("JSON Decode Error:", e)
-                raise HTTPException(status_code=500, detail=f"Error parsing JSON from CharacterBuilder: {e}")
+                print("Raw Result:", raw_result)
+                raise HTTPException(status_code=500, detail=f"Error parsing JSON: {e}")
         else:
-            print("Result does not have 'raw' attribute:", crew_result)
-            raise HTTPException(status_code=500, detail="Unexpected response structure from CharacterBuilder")
+            raise HTTPException(status_code=500, detail="Unexpected response structure")
 
     except Exception as e:
         print("Error in API:", e)
