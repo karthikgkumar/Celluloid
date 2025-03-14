@@ -1,6 +1,6 @@
 analyze_character_inputs:
  description: >
-   Analyze the provided abstract, logline, central message, and character role
+   Analyze the provided abstract, logline, central message, and character_details
    assignments to identify key character development opportunities
  expected_output: >
    Initial character development framework aligned with story themes
@@ -75,5 +75,56 @@ ensure_thematic_alignment:
    Verify all character elements reinforce the story's central message
    and themes
  expected_output: >
-   Analysis of how character profiles support overall story themes
+   Analysis of how character profiles support overall story themes.The output should in the format 
+    
+    "main_characters": [
+      {
+        "name": "<Character Name>",
+        "role_in_story": "<Main Character/Supporting>",
+        "core_motivation": "<Primary force driving their decisions>",
+        "internal_conflict": "<Struggles between personal desires and external pressures>",
+        "moral_weaknesses": "<Flaws or justifications leading to poor decisions>",
+        "physical_traits": {
+          "notable_feature_1": "<Distinctive physical characteristic>",
+          "notable_feature_2": "<Another defining physical trait>",
+          "notable_feature_3": "<Additional physical trait if applicable>"
+        },
+        "behavioral_patterns": {
+          "habit_1": "<Recurring action or habit>",
+          "habit_2": "<Behavior revealing their internal struggles>",
+          "habit_3": "<A unique personality trait>"
+        },
+        "desires": "<Character’s aspirations and goals>",
+        "self_deceptions": "<Lies they tell themselves to justify actions>",
+        "characteristic_dialogue": "\"<A key quote representing their personality>\"",
+        "learning_requirement": "<What they must realize or change to grow>",
+        "path_to_growth": "<How their journey reshapes them>"
+      }
+          ],
+     "supporting_characters": [
+      {
+        "name": "<Character Name>",
+        "role_in_story": "<Main Character/Supporting>",
+        "core_motivation": "<Primary force driving their decisions>",
+        "internal_conflict": "<Struggles between personal desires and external pressures>",
+        "moral_weaknesses": "<Flaws or justifications leading to poor decisions>",
+        "physical_traits": {
+          "notable_feature_1": "<Distinctive physical characteristic>",
+          "notable_feature_2": "<Another defining physical trait>",
+          "notable_feature_3": "<Additional physical trait if applicable>"
+        },
+        "behavioral_patterns": {
+          "habit_1": "<Recurring action or habit>",
+          "habit_2": "<Behavior revealing their internal struggles>",
+          "habit_3": "<A unique personality trait>"
+        },
+        "desires": "<Character’s aspirations and goals>",
+        "self_deceptions": "<Lies they tell themselves to justify actions>",
+        "characteristic_dialogue": "\"<A key quote representing their personality>\"",
+        "learning_requirement": "<What they must realize or change to grow>",
+        "path_to_growth": "<How their journey reshapes them>"
+      }
+          ]
+    
+
  agent: character_profile_assembler

@@ -1,0 +1,12 @@
+setup.py
+src/character_builder/__init__.py
+src/character_builder/character_agent.py
+src/character_builder/crew.py
+src/character_builder/main.py
+src/character_builder.egg-info/PKG-INFO
+src/character_builder.egg-info/SOURCES.txt
+src/character_builder.egg-info/dependency_links.txt
+src/character_builder.egg-info/requires.txt
+src/character_builder.egg-info/top_level.txt
+src/character_builder/tools/__init__.py
+src/character_builder/tools/custom_tool.py

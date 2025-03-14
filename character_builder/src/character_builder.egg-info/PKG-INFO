@@ -1,0 +1,5 @@
+Metadata-Version: 2.2
+Name: character_builder
+Version: 0.1.0
+Requires-Dist: crewai[tools]>=0.95.0
+Dynamic: requires-dist
