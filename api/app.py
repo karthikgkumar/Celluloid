@@ -133,8 +133,9 @@ class CharacterResponse(BaseModel):
     abstract: str
     logline: Optional[str] = None
     central_message: Optional[str] = None
-    genre: Optional[str] = None
-    characters: List[Dict[str, Any]]  # A list of character dictionaries
+    genre : Optional[str] = None
+    main_characters: List[Dict[str, Any]]  # A list of character dictionaries
+    supporting_characters: List[Dict[str, Any]]  # A list of character dictionaries
 
 @app.post("/character-agent/", response_model=CharacterResponse)
 async def generate_character(request: CharacterRequest):
@@ -163,14 +164,18 @@ async def generate_character(request: CharacterRequest):
                 # Parse the JSON string
                 parsed_result = json.loads(raw_result)
 
-                # Adjust the parsed result to match CharacterResponse structure
-                character_response_data = {
-                    "abstract": parsed_result.get("abstract", ""),  # Ensure abstract is present
-                    "characters": parsed_result.get("main_characters", [])  # Ensure characters is present
+                # Construct the response
+                response = {
+                    "abstract": request.abstract,
+                    "logline": request.logline,
+                    "central_message": request.central_message,
+                    "genre": None,
+                    "main_characters": parsed_result.get("main_characters", []),
+                    "supporting_characters": parsed_result.get("supporting_characters", [])
                 }
                 
                 # Validate the parsed result against CharacterResponse
-                return CharacterResponse(**character_response_data)
+                return CharacterResponse(**response)
             except json.JSONDecodeError as e:
                 print("JSON Decode Error:", e)
                 raise HTTPException(status_code=500, detail=f"Error parsing JSON from CharacterBuilder: {e}")
