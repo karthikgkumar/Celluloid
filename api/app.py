@@ -106,7 +106,7 @@ class CentralMessageResponse(BaseModel):
     central_message: str
 
 @app.post("/central-message/", response_model=CentralMessageResponse)
-async def generate_central_message(request: CentralMessageReques,api_key : str = Depends(verify_api_key)):
+async def generate_central_message(request: CentralMessageRequest,api_key : str = Depends(verify_api_key)):
     try:
         # Convert story elements to dictionary format
         story_elements_dict = {
