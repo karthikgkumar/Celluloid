@@ -1,14 +1,29 @@
 # app.py
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends, Security
+from fastapi.security.api_key import APIKeyHeader
 from pydantic import BaseModel, field_validator
 from typing import Optional, Dict, List, Any
 from logline_agent import LoglineTool
 from central_message import CentralMessageTool
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 from character_builder.crew import CharacterBuilder
 import json
 
 from fastapi.middleware.cors import CORSMiddleware
+
+apiKey = os.getenv('SECURE')
+API_KEY_NAME ='X-API-Key'
+api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
+
+def verify_api_key(api_key: str = Security(api_key_header)):
+    if api_key != apiKey:
+        raise HTTPException(status_code=403, detail="Invalid API Key")
+    return api_key
+
 
 app = FastAPI(
     title="Logline Generator API",
@@ -48,7 +63,7 @@ class LoglineResponse(BaseModel):
     story_elements: dict
 
 @app.post("/logline-agent/", response_model=LoglineResponse)
-async def generate_logline(request: LoglineRequest):
+async def generate_logline(request: LoglineRequest,api_key : str = Depends(verify_api_key) ):
     try:
         result = logline_tool._run(
             abstract=request.abstract,
@@ -91,7 +106,7 @@ class CentralMessageResponse(BaseModel):
     central_message: str
 
 @app.post("/central-message/", response_model=CentralMessageResponse)
-async def generate_central_message(request: CentralMessageRequest):
+async def generate_central_message(request: CentralMessageReques,api_key : str = Depends(verify_api_key)):
     try:
         # Convert story elements to dictionary format
         story_elements_dict = {
@@ -138,7 +153,7 @@ class CharacterResponse(BaseModel):
     supporting_characters: List[Dict[str, Any]]  # A list of character dictionaries
 
 @app.post("/character-agent/", response_model=CharacterResponse)
-async def generate_character(request: CharacterRequest):
+async def generate_character(request: CharacterRequest,api_key : str = Depends(verify_api_key)):
     try:
         inputs = {
             "abstract": request.abstract,
